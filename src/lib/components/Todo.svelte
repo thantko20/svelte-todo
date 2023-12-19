@@ -1,10 +1,10 @@
 <script lang="ts">
+	import type { ITodo } from '$lib';
+	import { todosStore } from '$lib';
 	import Button from './Button.svelte';
-	import type { Todo } from './types';
+	const { deleteTodo, toggleTodo } = todosStore;
 
-	export let todo: Todo;
-	export let toggleTodo: (text: string) => void;
-	export let deleteTodo: (text: string) => void;
+	export let todo: ITodo;
 </script>
 
 <div class="flex items-center justify-between bg-gray-800 p-4 rounded-sm">

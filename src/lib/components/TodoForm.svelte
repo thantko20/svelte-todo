@@ -1,10 +1,10 @@
 <script lang="ts">
+	import { todosStore } from '$lib';
 	import Button from './Button.svelte';
-	import type { Todo } from './types';
+
+	const { addTodo } = todosStore;
 
 	let value: string = '';
-
-	export let addTodo: (newTodo: Todo) => void;
 </script>
 
 <form
