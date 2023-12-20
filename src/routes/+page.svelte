@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { todosStore } from '$lib';
 	import Todo from '$lib/components/Todo.svelte';
 	import TodoForm from '$lib/components/TodoForm.svelte';
+	import { setTodosContext } from '$lib/contexts/todos.context';
+
+	const todos = setTodosContext();
 </script>
 
 <div class="flex flex-col gap-4 py-8">
 	<TodoForm />
-	{#each $todosStore as todo (todo.text)}
+	{#each $todos as todo (todo.text)}
 		<Todo {todo} />
 	{/each}
 </div>

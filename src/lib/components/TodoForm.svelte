@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { todosStore } from '$lib';
+	import { getTodosContext } from '$lib/contexts/todos.context';
 	import Button from './Button.svelte';
 
-	const { addTodo } = todosStore;
+	const { addTodo } = getTodosContext();
 
 	let value: string = '';
 </script>

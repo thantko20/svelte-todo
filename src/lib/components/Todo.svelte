@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { ITodo } from '$lib';
-	import { todosStore } from '$lib';
+	import { getTodosContext } from '$lib/contexts/todos.context';
 	import Button from './Button.svelte';
-	const { deleteTodo, toggleTodo } = todosStore;
+	const { deleteTodo, toggleTodo } = getTodosContext();
 
 	export let todo: ITodo;
 </script>
